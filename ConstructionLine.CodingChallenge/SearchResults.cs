@@ -23,30 +23,11 @@ namespace ConstructionLine.CodingChallenge
     }
 
 
-    public class ColorCount: IEquatable<ColorCount>
+    public class ColorCount
     {
         public Color Color { get; set; }
 
         public int Count { get; set; }
 
-        public bool Equals(ColorCount other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
-            return Equals(Color, other.Color);
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((ColorCount) obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return (Color != null ? Color.GetHashCode() : 0);
-        }
     }
 }
